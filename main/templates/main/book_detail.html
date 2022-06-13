@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ book.title }}</h5>
+          {% if book.edition %}
+          Edition: <small>{{ book.edition }}</small>
+          {% endif %}
+          
+          <p class="card-text">{{ book.author }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>Publisher:</b> {{ book.publisher }}</li>
+          <li class="list-group-item"><b>Year:</b> {{ book.year }}</li>
+          <li class="list-group-item"><b>No. of copies in Library: </b>{{ book.count }}</li>
+        </ul>
+      </div>
+</div>
+{% endblock content %}

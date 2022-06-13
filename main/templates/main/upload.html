@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if uploaded %}
+<div class="container">
+    <div class="alert alert-success" role="alert">
+        <strong>Data Uploaded Successfully. Row count: {{ row_count }}</strong>
+    </div>
+    
+</div>
+{% endif %}
+<div class="container mt-5">
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label class="custom-file">
+            <input type="file" name="excel" class="form-control" aria-describedby="fileHelpId">
+            <span class="custom-file-control"></span>
+          </label>
+          <small id="fileHelpId" class="form-text text-muted">Upload Excel Sheet</small>
+        </div>
+        <button type="submit" class="btn btn-dark">Upload</button>
+    </form>
+</div>
+
+
+{% endblock content %}
